@@ -1,0 +1,80 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Object Detection with YOLO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,500" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+  </head>
+  <body>
+    <div class="container row main-container">
+      <div class="col s12 dd-container">
+        <div class="card dd-card">
+          <div class="card-content black-text file-field">
+            <div id="drop-container">
+              <i class="material-icons large upload-icon">cloud_upload</i>
+              <span class="drag-txt"><b>Drag and drop image here</b></span>
+              <span class="or-txt">or</span>
+              <form action="#">
+                <div class="waves-effect waves-light btn" id="browse-container">
+                  <span>Browse files</span>
+                  <input type="file" id="browse-button" accept="image/*">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 uf-container">
+        <div class="card uf-card">
+          <img class="card crop" id="img-card" />
+        </div>
+        <div class="waves-effect waves-light btn" id="upload-button">
+          <span>Upload and Detect Image</span>
+        </div>
+        <div class="waves-effect waves-light btn" id="go-back">
+          <span>Go Back</span>
+        </div>
+      </div>
+      <div class="col s12 dt-container">
+        <div class="card uf-card" id="result-image">
+        </div>
+        <div class="waves-effect waves-light btn" id="go-start">
+          <span>Go Back</span>
+        </div>
+      </div>
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <div style="width: 100%; overflow: hidden;">
+            <div style="width: 100px; float: left;">
+              <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue-only">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                    <div class="circle"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="loading-text">
+              <h5></h5>Loading...</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
