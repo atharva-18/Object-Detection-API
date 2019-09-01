@@ -45,9 +45,10 @@ The website is hosted at -
 To use the web API, you can send a POST request to -
 
 #### Input
-You can send either of the following parameters - 
+You can send either of the following parameters - <br>
+
 Parameter | Type                           | Description
---------- | ------------------------------ | -----------------------------------------------------------------------------------
+--------- | ------------------------------ | ---------------------------------------------------------------------------------
 image     | file                           | Image file that you want to detect.
 image64   | text                           | Image in base64 form that you want to detect. Currently supports JPEG images only
 
