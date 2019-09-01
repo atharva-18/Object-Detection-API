@@ -5,7 +5,7 @@ WhiteNoise~=4.1.3
 Keras~=2.2.5
 numpy~=1.16.4
 matplotlib~=3.1.0
-http://download.pytorch.org/whl/cpu/torch-0.4.1-cp36-cp36m-linux_x86_64.whl
+https://download.pytorch.org/whl/cpu/torch-0.4.1.post2-cp37-cp37m-linux_x86_64.whl
 opencv-python~=4.1.0.25
 imageio~=2.5.0
 gunicorn~=19.9.0
