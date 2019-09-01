@@ -3,6 +3,9 @@ Pillow~=6.1.0
 gunicorn~=19.9.0
 WhiteNoise~=4.1.3
 Keras~=2.2.5
-torch
-opencv-python
-imageio
+numpy~=1.16.4
+matplotlib~=3.1.0
+torchvision~=0.4.0
+opencv-python~=4.1.0.25
+imageio~=2.5.0
+gunicorn~=19.9.0
