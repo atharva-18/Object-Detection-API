@@ -56,7 +56,7 @@ image64   | text                           | Image in base64 form that you want 
 Parameter | Type                | Description
 --------- | ------------------- | --------------------------------------------
 success   | bool                | Whether classification was sucessfuly or not 
-detect    | class label, float  | pair of label and it's confidence
+detect    | class label, float  | pair of label and its confidence
 
 Example:  {"success": true, "detect": {  "dog": 0.9989, "truck": 0.9999 }}<br>
 "detect" will be empty if no objects are detected.
