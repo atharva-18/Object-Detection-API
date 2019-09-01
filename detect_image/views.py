@@ -5,8 +5,8 @@ from django.views.decorators.csrf import csrf_exempt
 from django.core.files.temp import NamedTemporaryFile
 
 import io
-from imageio import imwrite
 import os
+from imageio import imwrite
 from PIL import Image
 import numpy as np
 from base64 import b64decode, b64encode
@@ -20,6 +20,7 @@ import cv2
 @csrf_exempt
 def yolo_detect_api(request):
     data = {'success':False}
+
     if request.method == "POST":
 
         if request.FILES.get("image", None) is not None:
@@ -75,5 +76,3 @@ def yolo_detect(image):
     plot_boxes(original_image, boxes, class_names, plot_labels = True)
 
     return print_objects(boxes, class_names)
-
-#########################
