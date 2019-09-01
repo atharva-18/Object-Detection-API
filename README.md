@@ -45,8 +45,7 @@ The website is hosted at -
 To use the web API, you can send a POST request to -
 
 #### Input
-You can send either of the following parameters - <br>
-
+You can send either of the following parameters - <br> 
 Parameter | Type                           | Description
 --------- | ------------------------------ | ---------------------------------------------------------------------------------
 image     | file                           | Image file that you want to detect.
@@ -56,7 +55,7 @@ image64   | text                           | Image in base64 form that you want 
 Parameter | Type                | Description
 --------- | ------------------- | --------------------------------------------
 success   | bool                | Whether classification was sucessfuly or not 
-detect    | class label, float  | pair of label and its confidence
+detect    | class label, float  | pair of label and it's confidence
 
 Example:  {"success": true, "detect": {  "dog": 0.9989, "truck": 0.9999 }}<br>
 "detect" will be empty if no objects are detected.
