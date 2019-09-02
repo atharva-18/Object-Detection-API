@@ -4,6 +4,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
+from django.core.files.temp import NamedTemporaryFile
+
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+cloudinary.config( 
+  cloud_name = "atharva18", 
+  api_key = "461326987233637", 
+  api_secret = "GiF86jutnD0A4cXBG5J3IJ2kG8k" 
+)
 
 def boxes_iou(box1, box2):
   
@@ -259,4 +270,11 @@ def plot_boxes(img, boxes, class_names, plot_labels, color = None):
             a.text(x1 + lxc, y1 - lyc, conf_tx, fontsize = 24, color = 'k',
                    bbox = dict(facecolor = rgb, edgecolor = rgb, alpha = 0.8))        
         
-    plt.savefig('result.png')
+    tmp_plot = NamedTemporaryFile()
+    plt.savefig(tmp_plot.name, format='png')
+    
+    response = cloudinary.uploader.upload("result.png",
+                                public_id = 'result',
+                                overwrite= True)
+                                  
+    return response['url']

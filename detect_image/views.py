@@ -6,7 +6,6 @@ from django.core.files.temp import NamedTemporaryFile
 
 import io
 import os
-from imageio import imwrite
 from PIL import Image
 import numpy as np
 from base64 import b64decode, b64encode
@@ -20,6 +19,7 @@ import cv2
 @csrf_exempt
 def yolo_detect_api(request):
     data = {'success':False}
+    url = ''
 
     if request.method == "POST":
 
@@ -27,20 +27,19 @@ def yolo_detect_api(request):
             image_request = request.FILES["image"]
             image_bytes = image_request.read()
             image = Image.open(io.BytesIO(image_bytes))
-            imwrite('temp.png', image)
+            result, url = yolo_detect(image)
 
         elif request.POST.get("image64", None) is not None:
             base64_data = request.POST.get("image64", None).split(',', 1)[1]
             plain_data = b64decode(base64_data)
-            plain_data = np.array(Image.open(io.BytesIO(plain_data))) 
-            imwrite('temp.png', plain_data)
+            plain_data = np.array(Image.open(io.BytesIO(plain_data)))
+            result, url = yolo_detect(plain_data)
 
-        result = yolo_detect('temp.png')
-        
         if result:
             data['success'] = True
 
     data['objects'] = result
+    data['url'] = url
 
     return JsonResponse(data)
 
@@ -48,7 +47,7 @@ def yolo_detect_api(request):
 def detect(request):
     return render(request, 'index.html')
 
-def yolo_detect(image):
+def yolo_detect(original_image):
     cfg_file = './cfg/yolov3.cfg'
 
     weight_file = './weights/yolov3.weights'
@@ -61,10 +60,6 @@ def yolo_detect(image):
 
     class_names = load_class_names(namesfile)
 
-    img = cv2.imread(image)
-
-    original_image = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-
     resized_image = cv2.resize(original_image, (m.width, m.height))
 
     nms_thresh = 0.6
@@ -73,6 +68,6 @@ def yolo_detect(image):
 
     boxes = detect_objects(m, resized_image, iou_thresh, nms_thresh)
 
-    plot_boxes(original_image, boxes, class_names, plot_labels = True)
+    url = plot_boxes(original_image, boxes, class_names, plot_labels = True)
 
-    return print_objects(boxes, class_names)
+    return print_objects(boxes, class_names), url

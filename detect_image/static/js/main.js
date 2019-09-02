@@ -74,7 +74,7 @@ $(document).ready(function() {
       var elem = document.createElement("img");
       elem.setAttribute('class', "card crop");
       elem.setAttribute('id', 'img-card');
-      elem.src = 'result.png';
+      elem.src = data['url'];
       document.getElementById("result-image").appendChild(elem);
     }
   }

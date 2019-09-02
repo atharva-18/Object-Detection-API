@@ -38,15 +38,14 @@ To run the server
     $ python3 manage.py runserver
 ```
 
-The website is hosted at - https://object-detection-yolo.herokuapp.com/detect/
+The website is hosted at - 
 
 ### Web API
 
-To use the web API, you can send a POST request to - https://object-detection-yolo.herokuapp.com/detect/api
+To use the web API, you can send a POST request to -
 
 #### Input
-You can send either of the following parameters -
-
+You can send either of the following parameters - <br> 
 Parameter | Type                           | Description
 --------- | ------------------------------ | ---------------------------------------------------------------------------------
 image     | file                           | Image file that you want to detect.
