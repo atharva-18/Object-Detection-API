@@ -1,4 +1,5 @@
 # Object-Detection-API
+
 A web-app that provides object detection using YOLOv3 and also an API.
 
 It's implemented using django framework and PyTorch (for YOLO model).
@@ -38,20 +39,25 @@ To run the server
     $ python3 manage.py runserver
 ```
 
-The website is hosted at - 
+The website is hosted at - https://object-detection-yolo.herokuapp.com
+
+The detection service is currently not working because of memory limits of Heroku.
 
 ### Web API
 
-To use the web API, you can send a POST request to -
+To use the web API, you can send a POST request to - https://object-detection-yolo.herokuapp.com/detect/api
 
 #### Input
-You can send either of the following parameters - <br> 
+
+You can send either of the following parameters -
+
 Parameter | Type                           | Description
 --------- | ------------------------------ | ---------------------------------------------------------------------------------
 image     | file                           | Image file that you want to detect.
 image64   | text                           | Image in base64 form that you want to detect. Currently supports JPEG images only
 
 #### Result
+
 Parameter | Type                | Description
 --------- | ------------------- | --------------------------------------------
 success   | bool                | Whether classification was sucessfuly or not 
@@ -76,5 +82,12 @@ No. of objects detected - 3 <br>
 
 The resultant image is generated using matplotlib.
 
+### TO-DO
+
+<ul>
+    <li>Move app to Google Cloud Platform</li>
+</ul>
+
 ### Contribute
+
 If you want to contribute and/or find any bug, feel free to do a pull request!
