@@ -2,7 +2,7 @@
 
 A web-app that provides object detection using YOLOv3 and also an API.
 
-It's implemented using django framework and PyTorch (for YOLO model).
+It's implemented using django framework and PyTorch (for YOLO model). The app uses cloudinary API for image hosting.<br>
 
 ![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg) ![GitHub pull-requests](https://img.shields.io/github/issues-pr/atharva-18/Object-Detection-API.svg) ![GitHub issues](https://img.shields.io/github/issues/atharva-18/Object-Detection-API.svg) <br>
 ![GitHub contributors](https://img.shields.io/github/contributors/atharva-18/Object-Detection-API.svg) ![Generic badge](https://img.shields.io/badge/Python-3.7.3-Blue.svg)
@@ -59,11 +59,12 @@ image64   | text                           | Image in base64 form that you want 
 #### Result
 
 Parameter | Type                | Description
---------- | ------------------- | --------------------------------------------
+--------- | ------------------- | ---------------------------------------------
 success   | bool                | Whether classification was sucessfuly or not 
 detect    | class label, float  | pair of label and it's confidence
+url       | image URL           | Link to the result image hosted on cloudinary
 
-Example:  {"success": true, "detect": {  "dog": 0.9989, "truck": 0.9999 }}<br>
+Example:  {"success": true, "detect": {  "dog": 0.9989, "truck": 0.9999 }, 'url':"https://example.com/image.png"}<br>
 "detect" will be empty if no objects are detected.
 
 ### Example
