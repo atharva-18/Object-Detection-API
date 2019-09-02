@@ -10,10 +10,12 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
+#Put your cloudinary credentials here
+
 cloudinary.config( 
-  cloud_name = "atharva18", 
-  api_key = "461326987233637", 
-  api_secret = "GiF86jutnD0A4cXBG5J3IJ2kG8k" 
+  cloud_name = "", 
+  api_key = "", 
+  api_secret = ""
 )
 
 def boxes_iou(box1, box2):
