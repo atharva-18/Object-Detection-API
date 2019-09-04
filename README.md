@@ -32,7 +32,7 @@ You can download the weights by -
 ```
 ### Usage
 
-Firstly, you need to put your cloudinary credentials (cloud_name, api_key and api_secret) in "detect_image/utils/utils.py" file.
+Firstly, you need to put your cloudinary credentials (cloud_name, api_key and api_secret) in "settings.py" file.
 
 To run the server
 ```
@@ -63,7 +63,7 @@ image64   | text                           | Image in base64 form that you want 
 Parameter | Type                | Description
 --------- | ------------------- | ---------------------------------------------
 success   | bool                | Whether classification was sucessfuly or not 
-detect    | class label, float  | pair of label and it's confidence
+detect    | class label, float  | pair of label and its confidence
 url       | image URL           | Link to the result image hosted on cloudinary
 
 Example:  {"success": true, "detect": {  "dog": 0.9989, "truck": 0.9999 }, 'url':"https://example.com/image.png"}<br>
