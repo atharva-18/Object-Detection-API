@@ -49,13 +49,10 @@ def detect(request):
 
 def yolo_detect(original_image):
     cfg_file = './cfg/yolov3.cfg'
-
     weight_file = './weights/yolov3.weights'
-
     namesfile = 'data/coco.names'
 
     m = Darknet(cfg_file)
-
     m.load_weights(weight_file)
 
     class_names = load_class_names(namesfile)
@@ -63,11 +60,9 @@ def yolo_detect(original_image):
     resized_image = cv2.resize(original_image, (m.width, m.height))
 
     nms_thresh = 0.6
-
     iou_thresh = 0.4
 
     boxes = detect_objects(m, resized_image, iou_thresh, nms_thresh)
-
     url = plot_boxes(original_image, boxes, class_names, plot_labels = True)
 
     return print_objects(boxes, class_names), url
