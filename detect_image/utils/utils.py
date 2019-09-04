@@ -10,14 +10,6 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
-#Put your cloudinary credentials here
-
-cloudinary.config( 
-  cloud_name = "", 
-  api_key = "", 
-  api_secret = ""
-)
-
 def boxes_iou(box1, box2):
   
     # Get the Width and Height of each bounding box
@@ -275,8 +267,9 @@ def plot_boxes(img, boxes, class_names, plot_labels, color = None):
     tmp_plot = NamedTemporaryFile()
     plt.savefig(tmp_plot.name, format='png')
     
-    response = cloudinary.uploader.upload("result.png",
-                                public_id = 'result',
-                                overwrite= True)
-                                  
+    response = cloudinary.uploader.upload(tmp_plot.name,
+                                          public_id = 'result',
+                                          overwrite= True)
+    tmp_plot.close()
+
     return response['url']
