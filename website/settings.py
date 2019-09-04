@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -138,3 +141,11 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = BASE_DIR
 
 MEDIA_URL = 'detect/'
+
+# Put your cloudinary credentials here
+
+cloudinary.config( 
+  cloud_name = "", 
+  api_key = "", 
+  api_secret = "" 
+)
