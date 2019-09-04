@@ -118,7 +118,8 @@ body {
     width: calc(100% - 20px);
   }
   
-  #img-card {
+  #img-card-1,
+  #img-card-2 {
     max-width: 100%;
     max-height: 100%;
     display: block;
@@ -163,5 +164,4 @@ body {
   .uppercase {
     text-transform: uppercase;
   }
-  
   
