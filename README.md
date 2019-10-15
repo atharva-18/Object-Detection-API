@@ -62,7 +62,7 @@ image64   | text                           | Image in base64 form that you want 
 
 Parameter | Type                | Description
 --------- | ------------------- | ---------------------------------------------
-success   | bool                | Whether classification was sucessful or not 
+success   | bool                | Whether classification was successful or not 
 detect    | class label, float  | pair of label and its confidence
 url       | image URL           | Link to the result image hosted on cloudinary
 
