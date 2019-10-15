@@ -62,7 +62,7 @@ image64   | text                           | Image in base64 form that you want 
 
 Parameter | Type                | Description
 --------- | ------------------- | ---------------------------------------------
-success   | bool                | Whether classification was sucessfuly or not 
+success   | bool                | Whether classification was sucessful or not 
 detect    | class label, float  | pair of label and its confidence
 url       | image URL           | Link to the result image hosted on cloudinary
 
@@ -83,7 +83,7 @@ The website also shows the detection output with bounding boxes around the detec
 
 No. of objects detected - 3 <br>
 
-The resultant image is generated using matplotlib.
+The result image is generated using matplotlib.
 
 ### TO-DO
 
