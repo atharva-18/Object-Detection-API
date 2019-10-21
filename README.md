@@ -32,7 +32,7 @@ You can download the weights by -
 ```
 ### Usage
 
-Firstly, you need to put your cloudinary credentials (cloud_name, api_key and api_secret) in "settings.py" file.
+Firstly, you need to put your cloudinary credentials (cloud_name, api_key and api_secret) in ```settings.py``` file.
 
 To run the server
 ```
