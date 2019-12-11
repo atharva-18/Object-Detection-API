@@ -4,7 +4,7 @@ A web-app that provides object detection using YOLOv3 and also an API.
 
 It's implemented using django framework and PyTorch (for YOLO model). The app uses cloudinary API for image hosting.<br>
 
-![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg) ![GitHub pull-requests](https://img.shields.io/github/issues-pr/atharva-18/Object-Detection-API.svg) ![GitHub issues](https://img.shields.io/github/issues/atharva-18/Object-Detection-API.svg) <br>
+![Maintenance](https://img.shields.io/badge/Maintained%3F-Yes-green.svg) ![GitHub pull-requests](https://img.shields.io/github/issues-pr/atharva-18/Object-Detection-API.svg) ![GitHub issues](https://img.shields.io/github/issues/atharva-18/Object-Detection-API.svg) <br>
 ![GitHub contributors](https://img.shields.io/github/contributors/atharva-18/Object-Detection-API.svg) ![Generic badge](https://img.shields.io/badge/Python-3.7.3-Blue.svg)
 
 ### Dependencies
