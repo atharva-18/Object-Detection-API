@@ -61,10 +61,10 @@ image64   | text                           | Image in base64 form that you want 
 #### Result
 
 Parameter | Type                | Description
---------- | ------------------- | ---------------------------------------------
+--------- | ------------------- | -----------------------------------------------
 success   | bool                | Whether classification was successful or not 
 detect    | class label, float  | pair of label and its confidence
-url       | image URL           | Link to the result image hosted on cloudinary
+url       | image URL           | Link to the result image uploaded to cloudinary
 
 Example:  {"success": true, "detect": {  "dog": 0.9989, "truck": 0.9999 }, 'url':"https://example.com/image.png"}<br>
 "detect" will be empty if no objects are detected.
