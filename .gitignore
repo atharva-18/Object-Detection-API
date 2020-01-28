@@ -1,1 +1,3 @@
 bin
+*.pyc
+yolov3.weights
