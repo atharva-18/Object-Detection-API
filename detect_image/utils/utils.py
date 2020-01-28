@@ -261,15 +261,19 @@ def plot_boxes(img, boxes, class_names, plot_labels, color = None):
             lyc = (img.shape[0] * 1.180) / 100
             
             # Draw the labels on top of the image
-            a.text(x1 + lxc, y1 - lyc, conf_tx, fontsize = 24, color = 'k',
+            a.text(x1 + lxc, y1 - lyc, conf_tx, fontsize = 12, color = 'k',
                    bbox = dict(facecolor = rgb, edgecolor = rgb, alpha = 0.8))        
         
     tmp_plot = NamedTemporaryFile()
-    plt.savefig(tmp_plot.name, format='png')
+    plt.axis('off')
+    plt.savefig(tmp_plot.name, format='png', dpi=360, bbox_inches='tight')
     
-    response = cloudinary.uploader.upload(tmp_plot.name,
-                                          public_id = 'result',
-                                          overwrite= True)
+    try:
+        response = cloudinary.uploader.upload(tmp_plot.name,
+                                            public_id = 'result',
+                                            overwrite= True)
+    except:
+        response = {url:''}
     tmp_plot.close()
-
+    
     return response['url']
