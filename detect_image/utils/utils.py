@@ -273,7 +273,7 @@ def plot_boxes(img, boxes, class_names, plot_labels, color = None):
                                             public_id = 'result',
                                             overwrite= True)
     except:
-        response = {url:''}
+        response = {'url':''}
     tmp_plot.close()
     
     return response['url']
