@@ -89,6 +89,7 @@ The result image is generated using matplotlib.
 
 <ul>
     <li>Move app to Google Cloud Platform</li>
+    <li>Create a docker image</li>
 </ul>
 
 ### Contribute
